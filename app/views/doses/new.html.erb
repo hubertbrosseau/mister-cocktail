@@ -1,0 +1,9 @@
+<h2>Select an in ingredient for your cocktail:</h2>
+
+
+<%= form_for([@cocktail, @dose]) do |f| %>
+  <%= f.text_area :description %>
+  <%= f.select :ingredient_id,
+           Ingredient.all.map { |ingredient| [ingredient.name, ingredient.id] } %>
+         <%= f.submit "Add an ingredient", class: "btn btn-primary" %>
+       <% end %>
