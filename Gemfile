@@ -54,3 +54,4 @@ gem 'font-awesome-sass'
 
 # If you want Bootstrap support on form_for
 gem 'bootstrap_form'
+gem 'rspec-rails', group: [ :test ]
