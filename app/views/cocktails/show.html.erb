@@ -1,5 +1,8 @@
 <h1>Detail of <%= @cocktail.name %></h1>
 
+<%= link_to "Back to list", cocktails_path, class: 'btn btn-default' %>
+<%= link_to "Delete", @cocktail, method: :delete, class: 'btn btn-default' %><br /><br />
+
 <%= image_tag @cocktail.picture.url(:medium) %>
 
 <h2>Ingredients:</h2>
@@ -9,6 +12,4 @@
   <% end %>
 </ul>
 
-<%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class: 'btn btn-success' %>
-
-<%= link_to "Back to list", cocktails_path, class: 'btn btn-warning' %>
+<%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>

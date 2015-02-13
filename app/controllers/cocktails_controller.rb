@@ -17,6 +17,12 @@ class CocktailsController < ApplicationController
     redirect_to cocktails_path
   end
 
+  def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.delete
+    redirect_to cocktails_path
+  end
+
 private
 
   def cocktail_params
