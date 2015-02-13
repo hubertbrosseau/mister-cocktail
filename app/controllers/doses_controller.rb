@@ -7,9 +7,12 @@ class DosesController < ApplicationController
 
   def create
     @dose = @cocktail.doses.build(dose_params)
-    cocktail=@dose.cocktail
-    @dose.save
-    redirect_to cocktail_path(cocktail)
+    cocktail = @dose.cocktail
+    if @dose.save
+      redirect_to cocktail_path(cocktail)
+    else
+      render :new
+    end
   end
 
   def destroy
