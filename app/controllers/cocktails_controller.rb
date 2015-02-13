@@ -11,8 +11,9 @@ class CocktailsController < ApplicationController
   end
 
   def create
-    @cocktail = Cocktail.create(cocktail_params)
+    @cocktail = Cocktail.new(cocktail_params)
     # flash[:notice] = "Cocktail #{@cocktail.name} has been created"
+    @cocktail.save
     redirect_to cocktails_path
   end
 
@@ -21,7 +22,7 @@ private
   def cocktail_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :picture)
   end
 
 end
